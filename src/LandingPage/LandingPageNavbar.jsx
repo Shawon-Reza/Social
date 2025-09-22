@@ -1,5 +1,5 @@
 import React from 'react'
-import navlogo from '../assets/logo.png'
+import navlogo from '../assets/Logo.png'
 import { NavLink } from 'react-router-dom';
 
 const LandingPageNavbar = () => {
