@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const LandingPageNavbar = () => {
     return (
-        <div className="flex justify-between items-center bg-[#0F172A] p-4 rounded-full">
+        <div className="flex justify-between items-center bg-[#0F172A] p-3 xl:p-4 rounded-full">
             {/* Left Section: Logo and Title */}
             <div className="flex items-center">
                 <figure className="mr-3">

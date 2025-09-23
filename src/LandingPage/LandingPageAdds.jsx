@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const advertisements = [
   {
@@ -32,7 +33,7 @@ const advertisements = [
 
 const LandingPageAdds = () => {
   const [playingAdId, setPlayingAdId] = useState(null);
-
+  const navigate = useNavigate();
   return (
     <div className="px-4 py-20 mx-auto text-center">
       {/* Heading */}
@@ -112,9 +113,10 @@ const LandingPageAdds = () => {
 
       {/* Add Advertisement Button */}
       <button
-        className="mt-10 w-full sm:w-auto px-4 py-2 sm:px-5 sm:py-3 md:px-6 md:py-4 
+      onClick={() => navigate("/advertisement-request")}
+        className="mt-10 w-full sm:w-auto px-4 py-2 sm:px-5 sm:py-3 md:px-6 md:py-3 
                    bg-blue-600 text-white text-sm sm:text-base md:text-xl lg:text-2xl 
-                   rounded-full hover:bg-blue-700 transition font-semibold"
+                   rounded-full hover:bg-blue-700 transition font-semibold cursor-pointer"
       >
         Add your advertisement
       </button>
