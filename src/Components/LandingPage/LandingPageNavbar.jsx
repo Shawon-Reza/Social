@@ -1,8 +1,11 @@
-import React from 'react'
-import navlogo from '../assets/Logo.png'
-import { NavLink } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import navlogo from "../../assets/Logo.png";
+import { NavLink, useNavigate } from "react-router-dom";
+
 
 const LandingPageNavbar = () => {
+    const navigate = useNavigate();
+
     return (
         <div className="flex justify-between items-center bg-[#0F172A] p-3 xl:p-4 rounded-full">
             {/* Left Section: Logo and Title */}
@@ -10,7 +13,13 @@ const LandingPageNavbar = () => {
                 <figure className="mr-3">
                     <img src={navlogo} alt="Navlogo" className="w-10 h-auto" />
                 </figure>
-                <h1 className="text-white text-2xl font-bold">Socialcrea</h1>
+                <h1
+                    onClick={() => navigate('/', { replace: true })}
+                    className="text-white text-2xl font-bold cursor-pointer"
+                >
+                    Socialcrea
+                </h1>
+
             </div>
             <div className='text-white space-x-5 text-lg'>
                 <NavLink to="/shop">
@@ -23,7 +32,9 @@ const LandingPageNavbar = () => {
 
             {/* Right Section: Subscribe Button */}
             <div className="flex items-center">
-                <button className="bg-white text-[#0f0f1f] py-2 px-6 rounded-full text-lg font-medium hover:bg-gray-200 transition-colors">
+                <button
+                    onClick={() => navigate('/signin')}
+                    className="cursor-pointer bg-white text-[#0f0f1f] py-2 px-6 rounded-full text-lg font-medium hover:bg-gray-200 transition-colors">
                     Sign In
                 </button>
             </div>

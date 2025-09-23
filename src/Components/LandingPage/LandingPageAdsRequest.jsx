@@ -1,8 +1,7 @@
-"use client"
+import { useState } from "react";
+import LandingPageNavbar from "./LandingPageNavbar";
+import ReCAPTCHA from "react-google-recaptcha";
 
-import { useState } from "react"
-import LandingPageNavbar from "./LandingPageNavbar"
-import ReCAPTCHA from "react-google-recaptcha"
 
 const LandingPageAdsRequest = () => {
     const [formData, setFormData] = useState({
@@ -52,12 +51,12 @@ const LandingPageAdsRequest = () => {
                 <LandingPageNavbar></LandingPageNavbar>
             </div>
             <div className="max-w-2xl lg:max-w-4xl mx-auto  rounded-lg  p-6">
-                <h1 className="text-xl font-medium text-center text-gray-900 mb-8">Advertisement</h1>
+                <h1 className="text-5xl font-medium text-center text-gray-900 mb-8">Advertisement</h1>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                     {/* Company Name */}
                     <div>
-                        <label className="block text-sm text-gray-600 mb-2">Company name</label>
+                        <label className="block text-md text-gray-600 mb-2">Company name</label>
                         <input
                             type="text"
                             name="companyName"
@@ -70,7 +69,7 @@ const LandingPageAdsRequest = () => {
 
                     {/* Email */}
                     <div>
-                        <label className="block text-sm text-gray-600 mb-2">Email</label>
+                        <label className="block text-xl text-gray-600 mb-2">Email</label>
                         <input
                             type="email"
                             name="email"
@@ -83,7 +82,7 @@ const LandingPageAdsRequest = () => {
 
                     {/* Phone Number */}
                     <div>
-                        <label className="block text-sm text-gray-600 mb-2">Phone number</label>
+                        <label className="block text-md text-gray-600 mb-2">Phone number</label>
                         <div className="flex">
                             <select
                                 name="countryCode"
@@ -120,7 +119,7 @@ const LandingPageAdsRequest = () => {
                                     />
                                 </svg>
                             </div>
-                            <p className="text-sm text-gray-600 mb-2">Add Media</p>
+                            <p className="text-md text-gray-600 mb-2">Add Media</p>
                             <input
                                 type="file"
                                 multiple
@@ -129,7 +128,7 @@ const LandingPageAdsRequest = () => {
                                 className="hidden"
                                 id="media-upload"
                             />
-                            <label htmlFor="media-upload" className="cursor-pointer text-blue-500 hover:text-blue-600 text-sm">
+                            <label htmlFor="media-upload" className="cursor-pointer text-blue-500 hover:text-blue-600 text-md">
                                 Click to upload files
                             </label>
                             {formData.mediaFiles.length > 0 && (
@@ -140,7 +139,7 @@ const LandingPageAdsRequest = () => {
 
                     {/* Owner Name */}
                     <div>
-                        <label className="block text-sm text-gray-600 mb-2">Owner name</label>
+                        <label className="block text-md text-gray-600 mb-2">Owner name</label>
                         <input
                             type="text"
                             name="ownerName"
@@ -153,7 +152,7 @@ const LandingPageAdsRequest = () => {
 
                     {/* Title */}
                     <div>
-                        <label className="block text-sm text-gray-600 mb-2">Title</label>
+                        <label className="block text-md text-gray-600 mb-2">Title</label>
                         <input
                             type="text"
                             name="title"
@@ -166,7 +165,7 @@ const LandingPageAdsRequest = () => {
 
                     {/* Description */}
                     <div>
-                        <label className="block text-sm text-gray-600 mb-2">Description</label>
+                        <label className="block text-md text-gray-600 mb-2">Description</label>
                         <textarea
                             name="description"
                             value={formData.description}
@@ -186,7 +185,7 @@ const LandingPageAdsRequest = () => {
                             onChange={handleInputChange}
                             className="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                         />
-                        <label className="text-sm text-gray-600 leading-relaxed">
+                        <label className="text-md text-gray-600 leading-relaxed">
                             Share the registration data with our content providers for marketing purposes.
                         </label>
                     </div>

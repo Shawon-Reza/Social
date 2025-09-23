@@ -1,12 +1,12 @@
 import React from 'react'
-import logo from '../assets/Image.png'
+import logo from '../../assets/Image.png'
 
 const LangdingPageHeader = () => {
     return (
         <div className=" px-12 pt-20">
             {/* Main Section */}
             <div className="text-center">
-                <h1 className="text-7xl font-extrabold text-gray-900 mb-4">
+                <h1 className="text-7xl font-bold text-gray-900 mb-4">
                     Maximize Your Social Reach with <span className="text-blue-600">Global Creole Society</span>
                 </h1>
                 <p className="text-lg text-gray-700 mb-8">

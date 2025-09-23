@@ -39,7 +39,7 @@ const LandingPageAdds = () => {
       {/* Heading */}
       <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
         Unlock Your <br />
-        <span className="text-blue-600">Social Media Growth</span>
+        <span className="text-blue-600 font-extrabold">Social Media Growth</span>
       </h2>
       <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
         We help you amplify your voice, grow your online influence, and connect

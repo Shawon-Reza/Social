@@ -7,7 +7,7 @@ const LandingPageSubscription = () => {
                 <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
                     Discover the Right Package
                     <br />
-                    for Your <span className="text-blue-600">Social Media Strategy</span>
+                    for Your <span className="text-blue-600 font-extrabold">Social Media Strategy</span>
                 </h2>
                 <p className="mt-4 text-gray-500 max-w-xl mx-auto">
                     Choose a plan that offers the right mix of features and support to elevate your socmed game

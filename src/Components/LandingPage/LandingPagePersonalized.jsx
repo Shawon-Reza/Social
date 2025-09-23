@@ -1,6 +1,6 @@
 import React from 'react';
-import img2 from '../assets/Image (6).png';
-import img1 from '../assets/Image (7).png';
+import img2 from '../../assets/Image (6).png';
+import img1 from '../../assets/Image (7).png';
 
 const LandingPagePersonalized = () => {
   return (

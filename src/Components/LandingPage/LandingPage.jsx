@@ -1,10 +1,12 @@
-import React from 'react'
-import LandingPageNavbar from './LandingPageNavbar'
-import LangdingPageHeader from './LangdingPageHeader'
-import LandingPagePersonalized from './LandingPagePersonalized'
-import LandingPageSubscription from './LandingPageSubscription'
-import LandingPageAdds from './LandingPageAdds'
-import LandingPageFooter from './LandingPageFooter'
+import React from "react";
+import LandingPageNavbar from "./LandingPageNavbar";
+import LangdingPageHeader from "./LangdingPageHeader";
+import LandingPageFooter from "./LandingPageFooter";
+import LandingPageAdds from "./LandingPageAdds";
+import LandingPageSubscription from "./LandingPageSubscription";
+import LandingPagePersonalized from "./LandingPagePersonalized";
+
+
 
 const LandingPage = () => {
     return (
