@@ -3,12 +3,18 @@ import { Plus } from "lucide-react"
 import { useNavigate } from "react-router-dom";
 
 const StoriesSection = ({ stories, onStoryClick }) => {
-const navigate=useNavigate();
+  const navigate = useNavigate();
 
 
   const handleStoryClick = (story) => {
     console.log("[v0] Story clicked:", story)
     navigate(`/feed/${story.id}`);
+  }
+
+
+  const handleCreateStoryClick = (story) => {
+    console.log("[v0] Story clicked:", story)
+
   }
 
 
@@ -18,9 +24,11 @@ const navigate=useNavigate();
 
       <div className="flex space-x-4 overflow-x-auto scrollbar-hide">
         {stories.map((story) => (
-          <div key={story.id} className="flex-shrink-0 cursor-pointer" onClick={() => handleStoryClick(story)}>
+          <div key={story.id} className="flex-shrink-0 cursor-pointer" >
             {story.type === "add" ? (
-              <div className="flex flex-col items-center">
+              <div
+                onClick={() => handleCreateStoryClick(story)}
+                className="flex flex-col items-center">
 
                 <div className="w-32 h-38 border-2 border-dashed border-gray-300 rounded-xl flex items-center justify-center hover:border-blue-400 transition-colors">
                   <Plus className="w-6 h-6 text-gray-400" />
@@ -32,6 +40,7 @@ const navigate=useNavigate();
               <div className="flex flex-col items-center">
 
                 <div
+                  onClick={() => handleStoryClick(story)}
                   className={`w-32 h-38 rounded-xl p-0.5 ${story.hasStory ? "bg-gradient-to-r from-pink-500 to-orange-500" : "bg-gray-300"}`}
                 >
                   <img

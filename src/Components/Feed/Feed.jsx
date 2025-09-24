@@ -2,16 +2,22 @@ import React from 'react'
 import Navbar from '../Navbar'
 import SocialFeed from './SocialFeed'
 import { useParams } from 'react-router-dom'
+import GlobalChatPopUp from './GlobalChatPopUp'
+
 
 const Feed = () => {
-   
+
     return (
-        <div>
+        <div className='relative bg-[#E2E8F0]'>
             <div className='py-7'>
                 <Navbar></Navbar>
             </div>
-            <div className='bg-[#E2E8F0]'>
+            <div className=''>
                 <SocialFeed></SocialFeed>
+            </div>
+            <div className='fixed bottom-5 right-5'>
+                <GlobalChatPopUp></GlobalChatPopUp>
+                
             </div>
         </div>
     )

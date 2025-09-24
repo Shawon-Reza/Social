@@ -37,7 +37,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/feed/:id",
-        element: <Reels reels={mockReels}></Reels>
+        element: <Reels ></Reels>
     },
 ]); 
 
