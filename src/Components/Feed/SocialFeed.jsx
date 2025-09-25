@@ -3,6 +3,7 @@ import StoriesSection from "./StoriesSection"
 import CreatePostSection from "./CreatePostSection"
 import PostCard from "./PostCard"
 import ShareModal from "./ShareModal" // Import ShareModal
+import CommentsModal from "./CommentsModal" // Import CommentsModal
 
 const mockStories = [
     { id: "add", type: "add", title: "Add your reels" },
@@ -51,7 +52,11 @@ const SocialFeed = () => {
     })
     const [isShareModalOpen, setIsShareModalOpen] = useState(false) // State for the modal
     const [selectedPostId, setSelectedPostId] = useState(null) // Store the selected post ID for sharing
-    const popupRef = useRef(null) // Reference for the modal container
+
+    const [isCommentModalOpen, setIsCommentModalOpen] = useState(false)
+
+    const shareModalRef = useRef(null) // Reference for ShareModal container
+    const commentsModalRef = useRef(null) // Reference for CommentsModal container
 
     const handleCreatePost = (postData) => {
         console.log("[v0] Creating post:", postData)
@@ -75,10 +80,7 @@ const SocialFeed = () => {
         console.log("[v0] Post liked:", { postId, isLiked })
     }
 
-    const handleComment = (postId) => {
-        console.log("[v0] Comment on post:", postId)
-    }
-
+    // For Share Modal................................
     const handleShare = (postId) => {
         setSelectedPostId(postId) // Set the post to be shared
         setIsShareModalOpen(true) // Open the share modal
@@ -89,11 +91,26 @@ const SocialFeed = () => {
         setSelectedPostId(null) // Reset selected post
     }
 
-    // Close the popup if the user clicks outside of the modal
+    // For Comment Modal................................
+    const handleComment = (postId) => {
+        setSelectedPostId(postId) // Set the post to be shared
+        setIsCommentModalOpen(true) // Open the comment modal
+    }
+
+    const closeCommentsModal = () => {
+        setIsCommentModalOpen(false) // Close the modal
+        setSelectedPostId(null) // Reset selected post
+    }
+
+    // Close modals if the user clicks outside of the modal
     useEffect(() => {
         const handleClickOutside = (event) => {
-            if (popupRef.current && !popupRef.current.contains(event.target)) {
-                closeShareModal(); // Close the modal if clicked outside
+            // Check for both modals, if clicked outside of them, close the respective modal
+            if (shareModalRef.current && !shareModalRef.current.contains(event.target)) {
+                closeShareModal(); // Close ShareModal if clicked outside
+            }
+            if (commentsModalRef.current && !commentsModalRef.current.contains(event.target)) {
+                closeCommentsModal(); // Close CommentsModal if clicked outside
             }
         };
 
@@ -143,7 +160,15 @@ const SocialFeed = () => {
                 isOpen={isShareModalOpen}
                 onClose={closeShareModal}
                 postId={selectedPostId} // Pass selected post to modal
-                ref={popupRef} // Reference for the modal container
+                ref={shareModalRef} // Reference for ShareModal container
+            />
+
+            {/* Comments Modal */}
+            <CommentsModal
+                isOpen={isCommentModalOpen}
+                onClose={closeCommentsModal}
+                postId={selectedPostId} // Pass selected post to modal
+                ref={commentsModalRef} // Reference for CommentsModal container
             />
         </div>
     )

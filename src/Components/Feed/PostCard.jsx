@@ -57,14 +57,14 @@ console.log(post)
         <div className="flex items-center space-x-6">
           <button
             onClick={handleLike}
-            className="flex items-center space-x-2 text-gray-500 hover:text-red-500 transition-colors"
+            className="cursor-pointer flex items-center space-x-2 text-gray-500 hover:text-red-500 transition-colors"
           >
             <Heart className={`w-5 h-5 ${isLiked ? "fill-red-500 text-red-500" : ""}`} />
             <span className="text-sm">{likesCount} Likes</span>
           </button>
           <button
             onClick={() => onComment(post.id)}
-            className="flex items-center space-x-2 text-gray-500 hover:text-blue-500 transition-colors"
+            className="cursor-pointer flex items-center space-x-2 text-gray-500 hover:text-blue-500 transition-colors"
           >
             <MessageCircle className="w-5 h-5" />
             <span className="text-sm">{post.comments} Comments</span>
