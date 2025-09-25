@@ -3,11 +3,12 @@
 import { useState, useEffect, useRef } from "react"
 import { X, ChevronRight } from "lucide-react"
 
-const CommentsModal = ({ isOpen, onClose, postData }) => {
+const CommentsModal = ({ isOpen, onClose, postId }) => {
   const [shareMessage, setShareMessage] = useState("") // For typing the comment
   const [comments, setComments] = useState([]) // To store comments
   const popupRef = useRef(null)
 
+  console.log(postId)
   // Mock data for comments - replace with actual API calls
   const mockComments = [
     {
