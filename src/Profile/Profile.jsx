@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../Components/Navbar'
 import ProfileHeader from './ProfileHeader'
+import AboutMe from './AboutMe'
 
 
 
@@ -44,13 +45,27 @@ const Profile = () => {
 
 
     return (
-        <div className=' bg-[#F0F0F0]'>
+        <div className=' bg-[#F0F0F0] pb-20'>
             <nav>
                 <Navbar></Navbar>
             </nav>
-            <div className='max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto mt-5 '>
-                <section className='pb-10 rounded-lg'>
+            <div className='max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto mt-5  '>
+                <section className='pb-7 rounded-lg'>
                     <ProfileHeader data={mockProfile}></ProfileHeader>
+                </section>
+
+
+                
+                {/* Main Section............... */}
+                <section className=' md:grid grid-cols-12'>
+                    <section className='col-span-4'>
+                        <div className='bg-white rounded-lg mb-10 p-8 shadow-xl'>
+                            <AboutMe></AboutMe>
+                        </div>
+                    </section>
+                    <section className='col-span-8'>
+
+                    </section>
                 </section>
             </div>
 
