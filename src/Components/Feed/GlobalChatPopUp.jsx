@@ -89,9 +89,10 @@ const GlobalChatPopUp = () => {
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (popupRef.current && !popupRef.current.contains(event.target)) {
-                handleClose() // Close chat if clicked outside
+                handleClose(); // Close chat if clicked outside
             }
-        }
+        };
+
 
         document.addEventListener("mousedown", handleClickOutside)
 
@@ -100,6 +101,17 @@ const GlobalChatPopUp = () => {
             document.removeEventListener("mousedown", handleClickOutside)
         }
     }, [])
+
+    if (!isOpen) {
+        return (
+            <div className="fixed bottom-6 right-6 z-50">
+                <button onClick={() => setIsOpen(true)}>
+                    <img src={chatIcon} alt="" className="h-full w-full cursor-pointer" />
+                </button>
+            </div>
+        )
+    }
+
 
     return (
         <div className="relative">
@@ -111,7 +123,7 @@ const GlobalChatPopUp = () => {
 
             <div
                 ref={popupRef} // Attach the ref to the popup container
-                className={`absolute bottom-30 right-10 w-[400px] h-[700px] xl:h-[750px] xl:w-[500px] bg-white rounded-2xl shadow-2xl overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "opacity-100 transform scale-100" : "opacity-0 transform scale-90"
+                className={`absolute bottom-30 right-10 w-[350px] h-[600px] xl:h-[700px] xl:w-[400px] bg-white rounded-2xl shadow-2xl overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "opacity-100 transform scale-100" : "opacity-0 transform scale-90"
                     }`}
             >
                 {!isActive ? (

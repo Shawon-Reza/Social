@@ -11,6 +11,7 @@ import SignUpPage from "../Components/Authentication/SignUpPage";
 import Feed from "../Components/Feed/Feed";
 import Reels from "../Components/Feed/Reels";
 import { mockReels } from "../Components/Feed/mockReels";
+import ShareModal from "../Components/Feed/ShareModal";
 
 
 const router = createBrowserRouter([
@@ -35,6 +36,7 @@ const router = createBrowserRouter([
         path: "/feed",
         element: <Feed></Feed>
     },
+    
     {
         path: "/feed/:id",
         element: <Reels ></Reels>

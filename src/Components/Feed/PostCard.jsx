@@ -1,15 +1,23 @@
 import React, { useState } from "react"
 import { Heart, MessageCircle, Share, MoreHorizontal } from "lucide-react"
+import { FaShareFromSquare } from "react-icons/fa6"
 
 const PostCard = ({ post, onLike, onComment, onShare }) => {
   const [isLiked, setIsLiked] = useState(post.isLiked)
   const [likesCount, setLikesCount] = useState(post.likes)
+  const [isOpen, setIsopen] = useState(false)
+  const [isClose, setIsClose] = useState(false)
+
 
   const handleLike = () => {
     const newLikedState = !isLiked
     setIsLiked(newLikedState)
     setLikesCount((prev) => (newLikedState ? prev + 1 : prev - 1))
     onLike(post.id, newLikedState)
+  }
+
+  const handleShare = () => {
+console.log(post)
   }
 
   return (
@@ -26,8 +34,11 @@ const PostCard = ({ post, onLike, onComment, onShare }) => {
             <p className="text-sm text-gray-500">{post.user.timestamp}</p>
           </div>
         </div>
-        <button onClick={() => onShare(post.id)} className="p-2 hover:bg-gray-100 rounded-full transition-colors">
-          <MoreHorizontal className="w-5 h-5 text-gray-500" />
+        <button onClick={() => {
+          handleShare()
+          onShare(post.id)
+        }} className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer">
+          <FaShareFromSquare className="w-4 h-4 text-gray-500" />
         </button>
       </div>
 
@@ -59,9 +70,7 @@ const PostCard = ({ post, onLike, onComment, onShare }) => {
             <span className="text-sm">{post.comments} Comments</span>
           </button>
         </div>
-        <button onClick={() => onShare(post.id)} className="p-2 hover:bg-gray-100 rounded-full transition-colors">
-          <Share className="w-4 h-4 text-gray-500" />
-        </button>
+
       </div>
     </div>
   )

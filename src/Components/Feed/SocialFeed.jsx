@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import StoriesSection from "./StoriesSection"
 import CreatePostSection from "./CreatePostSection"
 import PostCard from "./PostCard"
+import ShareModal from "./ShareModal" // Import ShareModal
 
-
-// Mock data and functions for simplicity
 const mockStories = [
     { id: "add", type: "add", title: "Add your reels" },
     { id: 1, username: "Morgan", avatar: "https://st3.depositphotos.com/15648834/17930/v/450/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg", hasStory: true },
@@ -48,10 +47,11 @@ const SocialFeed = () => {
     const [stories, setStories] = useState(mockStories)
     const [currentUser] = useState({
         username: "Ryan",
-        avatar: "/abstract-user-representation.png",
+        avatar: "https://media.istockphoto.com/id/492529287/photo/portrait-of-happy-laughing-man.jpg?s=612x612&w=0&k=20&c=0xQcd69Bf-mWoJYgjxBSPg7FHS57nOfYpZaZlYDVKRE=",
     })
-
-    
+    const [isShareModalOpen, setIsShareModalOpen] = useState(false) // State for the modal
+    const [selectedPostId, setSelectedPostId] = useState(null) // Store the selected post ID for sharing
+    const popupRef = useRef(null) // Reference for the modal container
 
     const handleCreatePost = (postData) => {
         console.log("[v0] Creating post:", postData)
@@ -80,8 +80,30 @@ const SocialFeed = () => {
     }
 
     const handleShare = (postId) => {
-        console.log("[v0] Share post:", postId)
+        setSelectedPostId(postId) // Set the post to be shared
+        setIsShareModalOpen(true) // Open the share modal
     }
+
+    const closeShareModal = () => {
+        setIsShareModalOpen(false) // Close the modal
+        setSelectedPostId(null) // Reset selected post
+    }
+
+    // Close the popup if the user clicks outside of the modal
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (popupRef.current && !popupRef.current.contains(event.target)) {
+                closeShareModal(); // Close the modal if clicked outside
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside)
+
+        // Clean up event listener when the component is unmounted
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside)
+        }
+    }, [])
 
     useEffect(() => {
         const handleScroll = () => {
@@ -95,19 +117,34 @@ const SocialFeed = () => {
     }, [])
 
     return (
-        <div className="max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto p-4  min-h-screen">
-            <StoriesSection stories={stories}  />
+        <div className="max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto p-4 min-h-screen">
+            <StoriesSection stories={stories} />
             <CreatePostSection currentUser={currentUser} onCreatePost={handleCreatePost} />
 
             <div className="space-y-4">
                 {posts.map((post) => (
-                    <PostCard key={post.id} post={post} onLike={handleLike} onComment={handleComment} onShare={handleShare} />
+                    <PostCard
+                        key={post.id}
+                        post={post}
+                        onLike={handleLike}
+                        onComment={handleComment}
+                        onShare={handleShare} // Pass the handleShare function to open the modal
+                    />
                 ))}
             </div>
+
             {/* Showing Loading */}
             <div className="text-center py-8">
                 <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
             </div>
+
+            {/* Share Modal */}
+            <ShareModal
+                isOpen={isShareModalOpen}
+                onClose={closeShareModal}
+                postId={selectedPostId} // Pass selected post to modal
+                ref={popupRef} // Reference for the modal container
+            />
         </div>
     )
 }
