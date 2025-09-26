@@ -5,7 +5,7 @@ import ShareModal from "./ShareModal"
 import CommentsModal from "./CommentsModal"
 
 const PostCard = ({ post }) => {
-  console.log(post)
+    console.log(post)
     const [isLiked, setIsLiked] = useState(post.isLiked)
     const [likesCount, setLikesCount] = useState(post.likes)
     const [isShareModalOpen, setIsShareModalOpen] = useState(false)
@@ -87,10 +87,10 @@ const PostCard = ({ post }) => {
 
             {/* Modals */}
             <ShareModal isOpen={isShareModalOpen} onClose={closeShareModal} postId={post.id} />
-            <CommentsModal 
-                isOpen={isCommentModalOpen} 
-                onClose={closeCommentModal} 
-               postId={post.id} // Pass entire post data including comments to the CommentsModal
+            <CommentsModal
+                isOpen={isCommentModalOpen}
+                onClose={closeCommentModal}
+                postId={post.id} // Pass entire post data including comments to the CommentsModal
             />
         </div>
     )
