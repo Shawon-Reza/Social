@@ -1,0 +1,19 @@
+/* Thin red custom scrollbar */
+.scrollbar-red::-webkit-scrollbar {
+  width: 2px;   /* vertical scrollbar thickness */
+  height: 1px;  /* horizontal scrollbar thickness */
+  border-radius: 100px;  /* rounded corners */
+}
+
+.scrollbar-red::-webkit-scrollbar-track {
+  background: transparent; /* no track background */
+}
+
+.scrollbar-red::-webkit-scrollbar-thumb {
+  background-color: grey; /* Tailwind red-500 */
+  border-radius: 9999px;     /* fully rounded edges */
+}
+
+.scrollbar-red::-webkit-scrollbar-thumb:hover {
+  background-color: #b91c1c; /* Tailwind red-700 on hover */
+}

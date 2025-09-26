@@ -129,7 +129,7 @@ const Profile = () => {
                     <section className='col-span-8'>
 
 
-                        <div className='bg-white rounded-lg mb-5 p-8 shadow-xl transform transition-transform duration-700 ease-out hover:scale-101'>
+                        <div className='bg-white rounded-lg mb-5 p-8 shadow-xl transform transition-transform duration-700 ease-out hover:scale-102'>
                             <Description></Description>
                         </div>
 

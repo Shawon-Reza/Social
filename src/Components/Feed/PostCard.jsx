@@ -34,7 +34,7 @@ const PostCard = ({ post }) => {
     }
 
     return (
-        <div className="bg-white rounded-xl p-4 mb-4 shadow-sm">
+        <div className="bg-white rounded-xl p-4 mb-4 shadow-sm transform transition-transform duration-700 ease-out hover:scale-102">
             <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center space-x-3">
                     <img
@@ -49,7 +49,7 @@ const PostCard = ({ post }) => {
                 </div>
                 <button
                     onClick={handleShare}
-                    className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer"
+                    className="p-2 hover:bg-gray-100 rounded-full  cursor-pointer transform transition-transform duration-700 ease-out hover:scale-120"
                 >
                     <FaShareFromSquare className="w-4 h-4 text-gray-500" />
                 </button>
