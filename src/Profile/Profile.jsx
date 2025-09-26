@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../Components/Navbar'
 import ProfileHeader from './ProfileHeader'
 import AboutMe from './AboutMe'
+import FriendsGrid from './FriendsGrid'
 
 
 
@@ -50,18 +51,25 @@ const Profile = () => {
                 <Navbar></Navbar>
             </nav>
             <div className='max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto mt-5  '>
-                <section className='pb-7 rounded-lg'>
+                <section className='pb-5 rounded-lg transform transition-transform duration-700 ease-out hover:scale-101'>
                     <ProfileHeader data={mockProfile}></ProfileHeader>
                 </section>
 
 
-                
+
                 {/* Main Section............... */}
                 <section className=' md:grid grid-cols-12'>
                     <section className='col-span-4'>
-                        <div className='bg-white rounded-lg mb-10 p-8 shadow-xl'>
+                        
+                        <div className='bg-white rounded-lg mb-5 p-8 shadow-xl transform transition-transform duration-700 ease-out hover:scale-101'>
                             <AboutMe></AboutMe>
                         </div>
+
+
+                        <div className='bg-white rounded-lg mb-10 p-8 shadow-xl transform transition-transform duration-700 ease-out hover:scale-101'>
+                            <FriendsGrid></FriendsGrid>
+                        </div>
+
                     </section>
                     <section className='col-span-8'>
 

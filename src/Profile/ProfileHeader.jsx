@@ -14,7 +14,7 @@ const ProfileHeader = ({ data }) => {
                 />
                 
                 {/* Profile Image Upload Section */}
-                <div className="absolute left-5 lg:left-10 -bottom-12 lg:-bottom-20 h-28 w-28 rounded-2xl bg-gray-100">
+                <div className="transform transition-transform duration-700 ease-in-out hover:scale-103 absolute left-5 lg:left-10 -bottom-12 lg:-bottom-20 h-28 w-28 rounded-2xl bg-gray-100">
                     <UploadProfilePage />
                 </div>
             </div>

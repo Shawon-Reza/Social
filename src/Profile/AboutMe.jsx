@@ -9,7 +9,7 @@ const AboutMe = () => {
         <div className=' '>
             <div className='flex justify-between text-lg font-semibold space-y-3'>
                 <h3 className='font-bold text-xl'>About Me </h3>
-                <BsThreeDots />
+                <BsThreeDots size={20} className='cursor-pointer hover:scale-105'/>
             </div>
             <div className='flex flex-col opacity-70 space-y-1' >
                 <div className='flex justify-between'>
