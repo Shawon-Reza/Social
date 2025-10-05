@@ -14,6 +14,9 @@ const LandingPageAdsRequest = () => {
         description: "",
         agreeToShare: false,
         mediaFiles: [],
+        time : "",
+        price: ""
+
     })
 
     const handleInputChange = (e) => {
@@ -150,6 +153,32 @@ const LandingPageAdsRequest = () => {
                         />
                     </div>
 
+                    <div className="flex justify-between gap-5">
+                        <div className="w-1/2">
+                            <label className="block text-md text-gray-600 mb-2">Time</label>
+                            <input
+                                type="number"
+                                name="time"
+                                value={formData.time}
+                                onChange={handleInputChange}
+                                placeholder=" How many days you want to run"
+                                className="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            />
+                        </div>
+
+                        <div className="w-1/2">
+                            <label className="block text-md text-gray-600 mb-2">Per day Price in USD</label>
+                            <input
+                                type="number"
+                                name="price"
+                                value={formData.price}
+                                onChange={handleInputChange}
+                                placeholder="USD"
+                                className="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            />
+                        </div>
+                    </div>
+
                     {/* Title */}
                     <div>
                         <label className="block text-md text-gray-600 mb-2">Title</label>
@@ -204,8 +233,8 @@ const LandingPageAdsRequest = () => {
                     </p>
 
                     {/* reCAPTCHA Placeholder */}
-                    <div className="w-full flex justify-start pl-7 py-3">
-                        <div className="scale-[1.2] transform origin-top">
+                    <div className="w-full flex justify-start pl- py-3">
+                        <div className="scale-[1] transform origin-top">
                             <ReCAPTCHA
                                 sitekey="6LeDKNIrAAAAAAqMzt62vFcRhJPawQNjawiD6MA0"
                                 onChange={onSuccess}

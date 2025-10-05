@@ -1,36 +1,15 @@
 import React, { useState } from "react"
 import { Heart, MessageCircle } from "lucide-react"
 import { FaShareFromSquare } from "react-icons/fa6"
-import ShareModal from "./ShareModal"
-import CommentsModal from "./CommentsModal"
 
-const PostCard = ({ post }) => {
-    console.log(post)
+const PostCard = ({ post, onComment, onShare }) => {
     const [isLiked, setIsLiked] = useState(post.isLiked)
     const [likesCount, setLikesCount] = useState(post.likes)
-    const [isShareModalOpen, setIsShareModalOpen] = useState(false)
-    const [isCommentModalOpen, setIsCommentModalOpen] = useState(false)
 
     const handleLike = () => {
         const newLikedState = !isLiked
         setIsLiked(newLikedState)
         setLikesCount((prev) => (newLikedState ? prev + 1 : prev - 1))
-    }
-
-    const handleShare = () => {
-        setIsShareModalOpen(true)
-    }
-
-    const handleComment = () => {
-        setIsCommentModalOpen(true)
-    }
-
-    const closeShareModal = () => {
-        setIsShareModalOpen(false)
-    }
-
-    const closeCommentModal = () => {
-        setIsCommentModalOpen(false)
     }
 
     return (
@@ -48,8 +27,8 @@ const PostCard = ({ post }) => {
                     </div>
                 </div>
                 <button
-                    onClick={handleShare}
-                    className="p-2 hover:bg-gray-100 rounded-full  cursor-pointer transform transition-transform duration-700 ease-out hover:scale-120"
+                    onClick={onShare}
+                    className="p-2 hover:bg-gray-100 rounded-full cursor-pointer transform transition-transform duration-700 ease-out hover:scale-120"
                 >
                     <FaShareFromSquare className="w-4 h-4 text-gray-500" />
                 </button>
@@ -76,7 +55,7 @@ const PostCard = ({ post }) => {
                         <span className="text-sm">{likesCount} Likes</span>
                     </button>
                     <button
-                        onClick={handleComment}
+                        onClick={onComment}
                         className="cursor-pointer flex items-center space-x-2 text-gray-500 hover:text-blue-500 transition-colors"
                     >
                         <MessageCircle className="w-5 h-5" />
@@ -84,14 +63,6 @@ const PostCard = ({ post }) => {
                     </button>
                 </div>
             </div>
-
-            {/* Modals */}
-            <ShareModal isOpen={isShareModalOpen} onClose={closeShareModal} postId={post.id} />
-            <CommentsModal
-                isOpen={isCommentModalOpen}
-                onClose={closeCommentModal}
-                postId={post.id} // Pass entire post data including comments to the CommentsModal
-            />
         </div>
     )
 }

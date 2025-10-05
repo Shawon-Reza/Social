@@ -101,7 +101,7 @@ const CommentsModal = ({ isOpen, onClose, postId }) => {
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 bg-black/15 flex items-center justify-center z-50 transition-opacity duration-300">
+    <div className="fixed inset-0 bg-black/15 flex items-center justify-center z-100 transition-opacity duration-300">
       <div
         ref={popupRef} // Assign ref to the modal container
         className={`bg-white rounded-xl w-[60%] max-h-[90vh] overflow-y-auto transform transition-transform duration-500 ease-out min-w-[420px] ${isOpen ? "translate-y-0" : "translate-y-full"}`}

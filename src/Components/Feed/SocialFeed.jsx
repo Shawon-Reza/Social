@@ -3,7 +3,9 @@
 import { useState } from "react"
 import StoriesSection from "./StoriesSection"
 import CreatePostSection from "./CreatePostSection"
-import PostCard from "./PostCard" // Import PostCard
+import PostCard from "./PostCard"
+import CommentsModal from "./CommentsModal"
+import ShareModal from "./ShareModal"
 
 const mockStories = [
     { id: "add", type: "add", title: "Add your reels" },
@@ -46,13 +48,16 @@ const mockPosts = [
 const SocialFeed = () => {
     const [posts, setPosts] = useState(mockPosts)
 
-    // For creating a post (just updates the posts list)
+    // Modal states
+    const [activeSharePostId, setActiveSharePostId] = useState(null)
+    const [activeCommentPostId, setActiveCommentPostId] = useState(null)
+
     const handleCreatePost = (postData) => {
         const newPost = {
             id: Date.now(),
             user: {
                 username: "Ryan",
-                avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuNhTZJTtkR6b-ADMhmzPvVwaLuLdz273wvQ&s", // Placeholder for user avatar
+                avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuNhTZJTtkR6b-ADMhmzPvVwaLuLdz273wvQ&s",
                 timestamp: "just now",
             },
             content: postData.content,
@@ -61,19 +66,50 @@ const SocialFeed = () => {
             comments: 0,
             isLiked: false,
         }
-        setPosts((prev) => [newPost, ...prev]) // Add new post to the beginning of the list
+        setPosts((prev) => [newPost, ...prev])
+    }
+
+    const handleOpenShareModal = (postId) => {
+        setActiveSharePostId(postId)
+    }
+
+    const handleOpenCommentModal = (postId) => {
+        setActiveCommentPostId(postId)
+    }
+
+    const closeShareModal = () => {
+        setActiveSharePostId(null)
+    }
+
+    const closeCommentModal = () => {
+        setActiveCommentPostId(null)
     }
 
     return (
         <div className="max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto p-4 min-h-screen">
             <StoriesSection stories={mockStories} />
-            <CreatePostSection currentUser={{ username: "Ryan", avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuNhTZJTtkR6b-ADMhmzPvVwaLuLdz273wvQ&s" }} onCreatePost={handleCreatePost} />
+            <CreatePostSection
+                currentUser={{
+                    username: "Ryan",
+                    avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuNhTZJTtkR6b-ADMhmzPvVwaLuLdz273wvQ&s",
+                }}
+                onCreatePost={handleCreatePost}
+            />
 
             <div className="space-y-4">
                 {posts.map((post) => (
-                    <PostCard key={post.id} post={post} />
+                    <PostCard
+                        key={post.id}
+                        post={post}
+                        onComment={() => handleOpenCommentModal(post.id)}
+                        onShare={() => handleOpenShareModal(post.id)}
+                    />
                 ))}
             </div>
+
+            {/* Modals */}
+            <ShareModal isOpen={!!activeSharePostId} onClose={closeShareModal} postId={activeSharePostId} />
+            <CommentsModal isOpen={!!activeCommentPostId} onClose={closeCommentModal} postId={activeCommentPostId} />
         </div>
     )
 }
