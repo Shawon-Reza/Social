@@ -3,7 +3,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const ProductGrid = ({ products = [] }) => {
-    // console.log(products)
+    console.log(products)
     const navigate = useNavigate()
     const handleClick = (id) => {
         console.log(id)

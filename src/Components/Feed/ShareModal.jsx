@@ -41,22 +41,22 @@ const ShareModal = ({ isOpen, onClose, postData }) => {
   }
 
   const handleShareNow = () => {
-    // console.log("[v0] Share now clicked:", {
-    //   postData,
-    //   message: shareMessage,
-    //   selectedUsers,
-    //   selectedSocieties,
-    // })
+    console.log("[v0] Share now clicked:", {
+      postData,
+      message: shareMessage,
+      selectedUsers,
+      selectedSocieties,
+    })
     onClose()
   }
 
   const handleShare = () => {
-    // console.log("[v0] Share clicked:", {
-    //   postData,
-    //   message: shareMessage,
-    //   selectedUsers,
-    //   selectedSocieties,
-    // })
+    console.log("[v0] Share clicked:", {
+      postData,
+      message: shareMessage,
+      selectedUsers,
+      selectedSocieties,
+    })
     onClose()
   }
 

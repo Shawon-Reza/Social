@@ -80,6 +80,8 @@ const Profile = () => {
     const closeShareModal = () => setActiveSharePostId(null)
     const closeCommentModal = () => setActiveCommentPostId(null)
 
+
+    
     const handleEditAboutPopup = () => {
         setIsModalOpen(prev => !prev)
     }

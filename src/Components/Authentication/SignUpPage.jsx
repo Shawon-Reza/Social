@@ -39,7 +39,7 @@ const SignUpPage = ({ onSwitchToLogin }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log("Sign Up Form Data:", formData)
+        
     }
 
     const months = [

@@ -8,7 +8,7 @@ const CommentsModal = ({ isOpen, onClose, postId }) => {
   const [comments, setComments] = useState([]) // To store comments
   const popupRef = useRef(null)
 
-  console.log(postId)
+ 
   // Mock data for comments - replace with actual API calls
   const mockComments = [
     {

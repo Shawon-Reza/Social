@@ -24,6 +24,11 @@ import FriendRequestList from "../Components/FriendRequests/FriendRequestList";
 import AddFriendList from "../Components/FriendRequests/AddFriendList";
 import MySociety from "../Components/MySociety/MySociety";
 import PendingPosts from "../Components/MySociety/PendingPosts";
+import HelpSection from "../Components/Settings/HelpSection";
+import ProfileSettings from "../Components/Settings/ProfileSettings";
+import ChangePassword from "../Components/Authentication/ChangePassword";
+import ChangeEmail from "../Components/Authentication/ChangeEmail";
+import ChatApp from "../Messaging/ChatApp";
 
 
 const router = createBrowserRouter([
@@ -97,13 +102,39 @@ const router = createBrowserRouter([
     },
     // My society..................................
     {
-        path: "/mysociety",
+        path: "/society/:id",
         element: <MySociety></MySociety>
     },
     {
         path: "pending_posts",
         element: <PendingPosts></PendingPosts>
-    }
+    },
+    // Setting..................................................
+    {
+        path:"/settings/help_center",
+        element: <HelpSection></HelpSection>
+    },
+    {
+        path:"/settings/profile_settings",
+        element:<ProfileSettings></ProfileSettings>
+    },
+
+    // Authentication............................
+    {
+        path: "/settings/profile_settings/chnage_password",
+        element: <ChangePassword></ChangePassword>
+    },
+    {
+        path: "/settings/profile_settings/chnage_email",
+        element: <ChangeEmail></ChangeEmail>
+    },
+// Chat app, messesing......................................
+{
+    path: "/chat",
+    element: <ChatApp></ChatApp>
+}
+
+
 ]);
 
 export default router;

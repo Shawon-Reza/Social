@@ -13,7 +13,7 @@ const GlobalCreoleSocietyCard = ({ posts = 10300, members = 2564, media = 234 })
 
 
 
-      <div className=' relative bg-white w-full p rounded-xl p-4 mt-20 pt-15'>
+      <div className=' relative bg-white w-full p rounded-xl p-4 mt-20 lg:mt-36 pt-15'>
         <h2 className="text-lg font-semibold text-gray-800 mt-4">Global Creole Society</h2>
         <div className="flex justify-around w-full mt-4 text-gray-600">
           <div>
@@ -33,7 +33,7 @@ const GlobalCreoleSocietyCard = ({ posts = 10300, members = 2564, media = 234 })
           Invite
         </button>
 
-        <section className="absolute -top-15 left-1/2 -translate-x-1/2">
+        <section className="absolute -top-15 lg:-top-36 left-1/2 -translate-x-1/2 ">
           <SocietyImgUpload />
         </section>
 

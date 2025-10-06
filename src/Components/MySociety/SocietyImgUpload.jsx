@@ -89,7 +89,7 @@ const SocietyImgUpload = () => {
       <div className="flex-1 flex flex-col items-center justify-center text-center max-w-xl mx-auto">
         {/* Image box */}
         <div
-          className="relative w-28 h-28 rounded-2xl border-4 border-white bg-gray-200 shadow-2xl overflow-hidden flex items-center justify-center mb-2 cursor-pointer"
+          className="relative w-28 h-28 lg:w-48 lg:h-48 rounded-2xl border-4 border-white bg-gray-200 shadow-2xl overflow-hidden flex items-center justify-center mb-2 cursor-pointer"
           onClick={openPreview}
           role="button"
           aria-label="Open image preview"

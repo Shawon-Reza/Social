@@ -46,9 +46,15 @@ const SocietyCardGrid = () => {
             See All
           </p>
         </div>
+
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {yourSocieties.map((society) => (
             <div
+              onClick={() => {
+                navigate(`/society/${society?.id}`)
+              }}
+
               key={society.id}
               className="bg-white rounded-lg shadow-md p-4 flex flex-col items-center text-center hover:scale-103 transform transition-transform duration-700 ease-in-out cursor-pointer"
             >
@@ -71,6 +77,7 @@ const SocietyCardGrid = () => {
           ))}
         </div>
 
+
         {/* Join Societies */}
         <div className='flex items-center justify-between mt-15'>
           <h2 className="text-xl sm:text-2xl font-bold mb-2">Join Societies</h2>
@@ -81,9 +88,14 @@ const SocietyCardGrid = () => {
           </p>
         </div>
 
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {joinSocieties.map((society) => (
             <div
+              onClick={() => {
+                navigate(`/society/${society?.id}`)
+              }}
+
               key={society.id}
               className="bg-white rounded-lg shadow-md p-4 flex flex-col items-center text-center hover:scale-103 transform transition-transform duration-700 ease-in-out cursor-pointer"
             >
