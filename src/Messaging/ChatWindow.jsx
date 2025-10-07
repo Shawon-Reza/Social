@@ -3,12 +3,14 @@
 import { useState, useRef, useEffect } from "react"
 import { FaPhone, FaVideo, FaEllipsisV, FaPaperclip, FaSmile, FaPaperPlane } from "react-icons/fa"
 import Message from "./Message"
+import { useNavigate } from "react-router-dom"
 
 
 function ChatWindow({ chat, messages, onSendMessage }) {
   const [messageText, setMessageText] = useState("")
   const [showMenu, setShowMenu] = useState(false)
   const messagesEndRef = useRef(null)
+  const navigate = useNavigate();
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
@@ -69,13 +71,20 @@ function ChatWindow({ chat, messages, onSendMessage }) {
         {/* Action Buttons */}
         <div className="flex items-center gap-3">
           <button
-            onClick={() => console.log("Voice call to:", chat.name)}
+            onClick={() => {
+              console.log("Voice call to:", chat.name)
+              navigate('/chat/audiocall')
+
+            }}
             className="p-2 hover:bg-gray-100 rounded-full transition-colors"
           >
             <FaPhone className="text-gray-600" />
           </button>
           <button
-            onClick={() => console.log("Video call to:", chat.name)}
+            onClick={() => {
+              console.log("Video call to:", chat.name)
+              navigate('/chat/videocall')
+            }}
             className="p-2 hover:bg-gray-100 rounded-full transition-colors"
           >
             <FaVideo className="text-gray-600" />
@@ -90,22 +99,22 @@ function ChatWindow({ chat, messages, onSendMessage }) {
 
             {/* Dropdown Menu */}
             {showMenu && (
-              <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-10">
+              <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200  z-10 ">
                 <button
                   onClick={() => handleMenuAction("view-profile")}
-                  className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 transition-colors"
+                  className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-400 rounded-b-xl transition-colors cursor-pointer "
                 >
                   View profile
                 </button>
                 <button
                   onClick={() => handleMenuAction("block")}
-                  className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                  className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-400 rounded-b-xl transition-colors cursor-pointer"
                 >
                   Block
                 </button>
                 <button
                   onClick={() => handleMenuAction("delete")}
-                  className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                  className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-400 rounded-b-xl transition-colors cursor-pointer"
                 >
                   Delete Chat
                 </button>

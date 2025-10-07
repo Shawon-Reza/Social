@@ -1,8 +1,10 @@
 import React, { useState } from "react"
 import { Video, ImageIcon } from "lucide-react"
+import { useNavigate } from "react-router-dom"
 
 const CreatePostSection = ({ currentUser, onCreatePost }) => {
   const [postText, setPostText] = useState("")
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -34,8 +36,11 @@ const CreatePostSection = ({ currentUser, onCreatePost }) => {
         <div className="flex justify-between items-center mt-3">
           <div className="flex space-x-4">
             <button
+              onClick={() => {
+                navigate("/feed/livestream")
+              }}
               type="button"
-              className="flex items-center space-x-2 px-4 py-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+              className="flex items-center space-x-2 cursor-pointer px-4 py-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
             >
               <Video className="w-5 h-5" />
               <span className="text-sm font-medium">Live</span>

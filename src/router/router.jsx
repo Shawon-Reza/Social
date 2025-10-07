@@ -29,6 +29,9 @@ import ProfileSettings from "../Components/Settings/ProfileSettings";
 import ChangePassword from "../Components/Authentication/ChangePassword";
 import ChangeEmail from "../Components/Authentication/ChangeEmail";
 import ChatApp from "../Messaging/ChatApp";
+import VideoCall from "../Messaging/VideoCall";
+import AudioCall from "../Messaging/AudioCall";
+import LiveStream from "../Components/Feed/LiveStream";
 
 
 const router = createBrowserRouter([
@@ -52,6 +55,10 @@ const router = createBrowserRouter([
     {
         path: "/feed",
         element: <Feed></Feed>
+    },
+    {
+        path: "/feed/livestream",
+        element: <LiveStream></LiveStream>
     },
 
     {
@@ -132,7 +139,15 @@ const router = createBrowserRouter([
 {
     path: "/chat",
     element: <ChatApp></ChatApp>
-}
+},
+{
+    path: "/chat/videocall",
+    element: <VideoCall></VideoCall>
+},
+{
+    path: "/chat/audiocall",
+    element: <AudioCall></AudioCall>
+},
 
 
 ]);
