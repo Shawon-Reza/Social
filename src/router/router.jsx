@@ -32,6 +32,14 @@ import ChatApp from "../Messaging/ChatApp";
 import VideoCall from "../Messaging/VideoCall";
 import AudioCall from "../Messaging/AudioCall";
 import LiveStream from "../Components/Feed/LiveStream";
+import FriendsList from "../Profile/FriendsList";
+import Notifications from "../Components/Notifications";
+import OrderCart from "../Components/Marketplace/OrderCart";
+import ProductManagement from "../Components/MyProduct/ProductManagement";
+import CreateProduct from "../Components/MyProduct/CreateProduct";
+import MyProductList from "../Components/MyProduct/MyProductList";
+import ProductCard from "../Components/Marketplace/ProductCard";
+import MyProductDetails from "../Components/MyProduct/MyProductDetails";
 
 
 const router = createBrowserRouter([
@@ -69,6 +77,10 @@ const router = createBrowserRouter([
         path: "/profile",
         element: <Profile></Profile>
     },
+    {
+        path: "/profile/friendslist",
+        element: <FriendsList></FriendsList>
+    },
 
 
     // Markets places routing.................
@@ -77,9 +89,31 @@ const router = createBrowserRouter([
         element: <MarketPlace></MarketPlace>
     },
     {
+        path: "/marketplace/orderlist",
+        element: <OrderCart></OrderCart>
+    },
+    {
         path: "/marketplace/:id",
         element: <ProductPage></ProductPage>
     },
+    {
+        path: "/marketplace/myproduct",
+        element: <ProductManagement></ProductManagement>
+    },
+    {
+        path: "/marketplace/myproduct/product details",
+        element: <MyProductDetails></MyProductDetails>
+    },
+    {
+        path: "/marketplace/myproduct/list",
+        element: <MyProductList></MyProductList>
+    },
+    {
+        path: "/marketplace/myproduct/addproduct",
+        element:  <CreateProduct></CreateProduct>
+    },
+
+
     //Society grid.......................
     {
         path: "/society",
@@ -118,12 +152,12 @@ const router = createBrowserRouter([
     },
     // Setting..................................................
     {
-        path:"/settings/help_center",
+        path: "/settings/help_center",
         element: <HelpSection></HelpSection>
     },
     {
-        path:"/settings/profile_settings",
-        element:<ProfileSettings></ProfileSettings>
+        path: "/settings/profile_settings",
+        element: <ProfileSettings></ProfileSettings>
     },
 
     // Authentication............................
@@ -135,19 +169,24 @@ const router = createBrowserRouter([
         path: "/settings/profile_settings/chnage_email",
         element: <ChangeEmail></ChangeEmail>
     },
-// Chat app, messesing......................................
-{
-    path: "/chat",
-    element: <ChatApp></ChatApp>
-},
-{
-    path: "/chat/videocall",
-    element: <VideoCall></VideoCall>
-},
-{
-    path: "/chat/audiocall",
-    element: <AudioCall></AudioCall>
-},
+    // Chat app, messesing......................................
+    {
+        path: "/chat",
+        element: <ChatApp></ChatApp>
+    },
+    {
+        path: "/chat/videocall",
+        element: <VideoCall></VideoCall>
+    },
+    {
+        path: "/chat/audiocall",
+        element: <AudioCall></AudioCall>
+    },
+    // Notification..............................
+    {
+        path: "notifications",
+        element: <Notifications></Notifications>
+    }
 
 
 ]);
