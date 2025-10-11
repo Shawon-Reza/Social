@@ -76,7 +76,7 @@ const MarketPlace = () => {
     ];
 
     return (
-        <div >
+        <div className='bg-gray-100'>
 
             <section className='py-7'>
                 <Navbar />
@@ -85,7 +85,7 @@ const MarketPlace = () => {
                 <section>
                     <SearchBar></SearchBar>
                 </section>
-                <section>
+                <section >
                     <ProductGrid products={sampleProducts} ></ProductGrid>
                 </section>
             </div>

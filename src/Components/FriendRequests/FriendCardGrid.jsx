@@ -96,16 +96,16 @@ const FriendCardGrid = () => {
     );
 
     return (
-        <div>
-            <section className="mb-10">
+        <div className="bg-gray-100 min-h-screen">
+             <div className='py-7'>
                 <Navbar></Navbar>
-            </section>
+            </div>
 
             <section className="container mx-auto px-4">
                 {/* Friend Requests Section */}
                 <div className="flex justify-between items-center mb-4">
                     <div>
-                        <h1 className="text-2xl sm:text-3xl font-bold">Friend Requests</h1>
+                        <h1 className="text-2xl sm:text-3xl font-bold my-2">Friend Requests</h1>
                         <p className="text-blue-500 text-sm sm:text-base">
                             {friendRequests.length} Friend Requests
                         </p>
@@ -125,7 +125,7 @@ const FriendCardGrid = () => {
 
                 {/* Add Friends Section */}
                 <div className="flex items-center justify-between mt-10">
-                    <h2 className="text-2xl sm:text-3xl font-bold mt-6 mb-2">Add Friends</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold mt-6 my-3">Add Friends</h2>
                     <button
                         onClick={() => {
                             navigate('/frient_requests/add_friends');

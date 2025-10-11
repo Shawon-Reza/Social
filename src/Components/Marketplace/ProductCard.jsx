@@ -6,6 +6,7 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
 
 const dummyProduct = {
   id: 1,
@@ -25,9 +26,13 @@ const dummyProduct = {
   variants: ['red', 'yellow', 'gray', 'white']
 };
 
+
 const ProductCard = ({ product = dummyProduct }) => {
   const [quantity, setQuantity] = useState(1);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const {id}=useParams()
+  const navigate= useNavigate()
+
 
   const unitPrice = typeof product.price === 'string'
     ? parseFloat(product.price.replace('$', ''))
@@ -137,7 +142,12 @@ const ProductCard = ({ product = dummyProduct }) => {
             <button className="w-full px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium">
               Add to Cart
             </button>
-            <button className="w-full px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium">
+            <button
+
+              onClick={()=>{
+                navigate(`/marketplace/${id}/payment`)
+              }}
+              className="w-full px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium">
               Buy Now
             </button>
           </div>

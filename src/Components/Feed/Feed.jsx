@@ -8,7 +8,7 @@ import GlobalChatPopUp from './GlobalChatPopUp'
 const Feed = () => {
 
     return (
-        <div className='relative bg-[#E2E8F0]'>
+        <div className='relative bg-gray-100'>
             <div className='py-7'>
                 <Navbar></Navbar>
             </div>

@@ -27,7 +27,7 @@ const ProductGrid = ({ products = [] }) => {
                         handleClick(product?.id)
                         navigate(`/marketplace/${product?.id}`)
                     }}
-                    className="bg-white rounded-lg shadow-md overflow-hidden hover:scale-103 transform transition-transform duration-700 ease-in-out cursor-pointer">
+                    className="bg-gray-50 rounded-lg shadow-md overflow-hidden hover:scale-103 transform transition-transform duration-700 ease-in-out cursor-pointer">
                     <img
                         src={product?.image}
                         alt={product?.name}

@@ -2,9 +2,14 @@ import React, { useState } from 'react';
 import Navbar from '../Navbar';
 import { useNavigate } from 'react-router-dom';
 import { FaPlus } from 'react-icons/fa';
+import CreateSocietyForm from './CreateSocietyForm';
 
 const SocietyCardGrid = () => {
   const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
 
   const [yourSocieties, setYourSocieties] = useState([
     { id: 1, name: "Society 1", logo: "https://www.shutterstock.com/image-vector/eagle-logo-fierce-vibrant-soaring-260nw-2494369867.jpg", lastActive: "1 hour" },
@@ -21,25 +26,29 @@ const SocietyCardGrid = () => {
   ]);
 
   return (
-    <div>
-      <section>
+    <div className='bg-gray-100 min-h-screen'>
+      <section className='py-7'>
         <Navbar />
       </section>
 
-      <section className='container mx-auto mt-10'>
+      <section className='container mx-auto mt-2'>
         {/* Header */}
         <div className="flex justify-between items-center mb-4">
           <h1 className="text-2xl sm:text-3xl font-bold">Society</h1>
           <div className="space-x-2">
-            <button className="flex items-center gap-2 text-[#3B82F6] border border-[#3B82F6] px-4 py-2 rounded hover:bg-blue-600 font-semibold">
+            <button
+              onClick={handleOpenModal}
+              className="flex items-center gap-2 text-[#3B82F6] border border-[#3B82F6] px-4 py-2 rounded hover:bg-blue-600 hover:text-white font-semibold cursor-pointer">
               <FaPlus /> Create New Society
             </button>
           </div>
         </div>
 
+        <CreateSocietyForm isOpen={isModalOpen} onClose={handleCloseModal}></CreateSocietyForm>
+
         {/* Your Societies */}
         <div className='flex items-center justify-between mt-5'>
-          <h2 className="text-xl sm:text-2xl font-bold mb-2">Your Societies</h2>
+          <h2 className="text-xl sm:text-2xl font-bold mb-3">Your Societies</h2>
           <p
             onClick={() => navigate('/society/my_society_list')}
             className='text-[#3B82F6] font-semibold cursor-pointer'>
@@ -56,7 +65,7 @@ const SocietyCardGrid = () => {
               }}
 
               key={society.id}
-              className="bg-white rounded-lg shadow-md p-4 flex flex-col items-center text-center hover:scale-103 transform transition-transform duration-700 ease-in-out cursor-pointer"
+              className="bg-gray-50 rounded-lg shadow-md p-4 flex flex-col items-center text-center hover:scale-103 transform transition-transform duration-700 ease-in-out cursor-pointer"
             >
               <img
                 src={society.logo}
@@ -80,7 +89,7 @@ const SocietyCardGrid = () => {
 
         {/* Join Societies */}
         <div className='flex items-center justify-between mt-15'>
-          <h2 className="text-xl sm:text-2xl font-bold mb-2">Join Societies</h2>
+          <h2 className="text-xl sm:text-2xl font-bold mb-3">Join Societies</h2>
           <p
             onClick={() => navigate('/society/join_society_list')}
             className='text-[#3B82F6] font-semibold cursor-pointer'>

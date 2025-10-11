@@ -7,7 +7,7 @@ const LangdingPageHeader = () => {
             {/* Main Section */}
             <div className="text-center">
                 <h1 className="text-7xl font-bold text-gray-900 mb-4">
-                    Maximize Your Social Reach with <span className="text-blue-600">Global Creole Society</span>
+                    <span className='text-blue-600'>Elevate</span> Your Social Reach with <span className="text-blue-600">Global Creole Society</span>
                 </h1>
                 <p className="text-lg text-gray-700 mb-8">
                     Manage all your social media channels effortlessly with our intuitive tools, comprehensive analytics, and expert support, ensuring you stay ahead in the ever-evolving digital landscape.

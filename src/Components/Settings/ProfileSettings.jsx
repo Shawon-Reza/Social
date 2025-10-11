@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { FaUser, FaLock, FaKey, FaPhone, FaEnvelope, FaBirthdayCake, FaChevronRight } from 'react-icons/fa';
 import Navbar from '../Navbar';
 import { useNavigate } from 'react-router-dom';
+import { CiEdit } from 'react-icons/ci';
 
 function ProfileSettings() {
     const [isProfileLocked, setIsProfileLocked] = useState(false);
     const navigate = useNavigate();
-
 
 
     // User data
@@ -136,13 +136,19 @@ function ProfileSettings() {
                             {/* Contact Info */}
                             <button
                                 onClick={handleContactInfoClick}
-                                className="w-full flex items-center justify-between hover:bg-gray-50 transition-colors p-4 sm:p-6"
+                                className="w-full  hover:bg-gray-50 transition-colors p-4 sm:p-6"
                             >
                                 <div className="text-left">
-                                    <div className="text-sm sm:text-base font-medium text-gray-900 mb-1">Contact info</div>
-                                    <div className="text-xs sm:text-sm text-gray-500">{userData.phone}</div>
+                                    <div className="flex justify-between items-center text-sm sm:text-base font-medium text-gray-900 mb-1">
+                                        <p>Contact info</p>
+                                        <CiEdit size={20} className='cursor-pointer'/>
+                                    </div>
+                                    <div className="flex justify-between items-center text-xs sm:text-sm text-gray-500 ">
+                                        <p>{userData.phone}</p>
+                                        <button className='text-red-500 cursor-pointer'>Remove</button>
+                                    </div>
                                 </div>
-                                <FaChevronRight className="text-gray-400 text-sm sm:text-base flex-shrink-0 ml-4" />
+                            
                             </button>
 
                             {/* Email */}

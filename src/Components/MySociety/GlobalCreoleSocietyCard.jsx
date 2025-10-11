@@ -1,11 +1,11 @@
 import React from 'react';
 import { FaPencilAlt } from 'react-icons/fa';
 import SocietyImgUpload from './SocietyImgUpload';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const GlobalCreoleSocietyCard = ({ posts = 10300, members = 2564, media = 234 }) => {
   const navigate = useNavigate();
-
+const {id}=useParams()
 
   return (
     <div className=" rounded-xl mx-auto flex flex-col items-center text-center">
@@ -52,14 +52,18 @@ const GlobalCreoleSocietyCard = ({ posts = 10300, members = 2564, media = 234 })
         </div>
         <div
           onClick={() => {
-            navigate('/pending_posts')
+            navigate(`/society/${id}/pending_posts`)
           }}
           className="mb-4 bg-white rounded-lg p-2 px-4 flex justify-between cursor-pointer transform transition-transform duration-700 ease-in-out hover:scale-101" >
           <p className="text-gray-600 font-semibold">Pending Posts</p>
           <p className="text-lg font-bold">12</p>
         </div>
 
-        <div className="mb-4 flex justify-between bg-white rounded-lg p-2 px-4 cursor-pointer transform transition-transform duration-700 ease-in-out hover:scale-101">
+        <div
+          onClick={() => {
+            navigate(`/society/${id}/pending_members`)
+          }}
+          className="mb-4 flex justify-between bg-white rounded-lg p-2 px-4 cursor-pointer transform transition-transform duration-700 ease-in-out hover:scale-101">
           <p className="text-gray-600 font-semibold">Pending Members</p>
           <p className="text-lg font-bold">12</p>
         </div>

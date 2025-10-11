@@ -25,7 +25,7 @@ const AddFriendList = () => {
             <div className="container mx-auto p-4">
                 <div className="flex justify-between items-center mb-4">
                     <div>
-                        <h1 className="text-2xl sm:text-3xl font-bold">Add Friend</h1>
+                        <h1 className="text-2xl sm:text-3xl font-bold my-3">Add Friend</h1>
                         {/* <p className="text-blue-500 text-sm sm:text-base">12 Friends requests</p> */}
                     </div>
                 </div>

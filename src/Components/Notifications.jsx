@@ -160,15 +160,15 @@ function Notifications() {
     return (
         <div className="bg-gray-100 ">
 
-            <div>
+            <div className="my-7">
                 <Navbar></Navbar>
             </div>
 
 
             {/* Main part...................... */}
 
-            <div className="min-h-screen py-6 px-4 sm:px-6 lg:px-8">
-                <div className="container mx-auto mx-auto">
+            <div className="min-h-[calc(100vh-100px)] pb-6 px-4 sm:px-6 lg:px-8">
+                <div className="container  mx-auto">
                     {/* Header */}
                     <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Notifications</h1>
 
@@ -177,7 +177,7 @@ function Notifications() {
                         {notifications.map((notification) => (
                             <div
                                 key={notification.id}
-                                className={`bg-white rounded-lg shadow-sm p-4 sm:p-5 flex items-start gap-3 sm:gap-4 hover:shadow-md transition-shadow ${!notification.isRead ? "border-l-4 border-blue-500" : ""
+                                className={`bg-gray-50 rounded-lg shadow-sm p-4 sm:p-5 flex items-start gap-3 sm:gap-4 hover:shadow-md transition-shadow ${!notification.isRead ? "border-l-4 border-blue-500" : ""
                                     }`}
                             >
                                 {/* User Avatar */}

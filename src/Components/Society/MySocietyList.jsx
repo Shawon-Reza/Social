@@ -18,12 +18,12 @@ const MySocietyList = () => {
   ]);
 
   return (
-    <div>
-      <section>
+    <div className='bg-gray-100'>
+      <section className='py-7'>
         <Navbar />
       </section>
 
-      <section className='container mx-auto mt-10'>
+      <section className='container mx-auto'>
         {/* Header */}
         <div className="flex justify-between items-center mb-4">
           <h1 className="text-2xl sm:text-3xl font-bold">Society</h1>
@@ -37,7 +37,7 @@ const MySocietyList = () => {
           {yourSocieties.map((society) => (
             <div
               key={society.id}
-              className="bg-white rounded-lg shadow-md p-4 flex flex-col items-center text-center"
+              className="bg-gray-50 rounded-lg shadow-md p-4 flex flex-col items-center text-center"
             >
               <img
                 src={society.logo}

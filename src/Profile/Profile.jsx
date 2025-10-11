@@ -136,7 +136,7 @@ const Profile = () => {
     }
 
     return (
-        <div className="relative bg-[#F0F0F0] pb-20">
+        <div className="relative bg-[#F0F0F0] pb-20 my-7">
 
             {/* Edit Profile Modal */}
             {isModalOpen && (

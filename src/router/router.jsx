@@ -40,6 +40,8 @@ import CreateProduct from "../Components/MyProduct/CreateProduct";
 import MyProductList from "../Components/MyProduct/MyProductList";
 import ProductCard from "../Components/Marketplace/ProductCard";
 import MyProductDetails from "../Components/MyProduct/MyProductDetails";
+import Payment from "../Components/Marketplace/Payment";
+import PendingMembers from "../Components/MySociety/PendingMembers";
 
 
 const router = createBrowserRouter([
@@ -97,6 +99,10 @@ const router = createBrowserRouter([
         element: <ProductPage></ProductPage>
     },
     {
+        path: "/marketplace/:id/payment",
+        element: <Payment></Payment>
+    },
+    {
         path: "/marketplace/myproduct",
         element: <ProductManagement></ProductManagement>
     },
@@ -147,7 +153,11 @@ const router = createBrowserRouter([
         element: <MySociety></MySociety>
     },
     {
-        path: "pending_posts",
+        path: "/society/:id/pending_members",
+        element: <PendingMembers></PendingMembers>
+    },
+    {
+        path: "/society/:id/pending_posts",
         element: <PendingPosts></PendingPosts>
     },
     // Setting..................................................

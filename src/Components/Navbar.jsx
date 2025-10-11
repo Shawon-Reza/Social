@@ -5,6 +5,7 @@ import { FaHome, FaUsers, FaComment, FaBell, FaUserFriends } from "react-icons/f
 import { IoMdSearch, IoMdSettings } from "react-icons/io";
 import { MdExpandLess } from "react-icons/md";
 import SettingPopup from "./Settings/SettingPopup";
+import websitelogo from "../assets/websitelogo.png"
 
 const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -57,14 +58,21 @@ const Navbar = () => {
     { name: "notifications", icon: <FaBell className="w-7 h-7" /> },
   ];
 
-  // const profileItems = ["profile", "settings", "logout"];
+  const profileItems = ["profile", "settings", "logout"];
 
   return (
-    <nav className="bg-yellow-500 px-4 py-2 md:py-4 flex items-center justify-between relative">
+    <nav className="bg-yellow-500 px-4 py-2 md:py-4 flex items-center justify-between relative lg:px-20">
       {/* Logo/Brand */}
-      <div className="flex items-center space-x-2 w-1/3">
-        <div className="w-6 h-6 bg-blue-500 rounded"></div>
-        <span className="text-gray-800 font-semibold text-lg">Square</span>
+      <div
+      
+        className="flex items-center space-x-2 w-1/3">
+        <figure>
+          <img 
+          onClick={()=>{
+            navigate("/feed")
+          }}
+          src={websitelogo} alt="" className="h-10 md:h-12 cursor-pointer  hover:scale-102 transform transition-transform duration-700 ease-in-out" />
+        </figure>
       </div>
 
       {/* Desktop Menu */}
@@ -186,7 +194,7 @@ const Navbar = () => {
               }
               onClick={() => setIsMenuOpen(false)}
             >
-              {item.charAt(0).toUpperCase() + item.slice(1)}
+              {/* {item.charAt(0).toUpperCase() + item.slice(1)} */}
             </NavLink>
           ))}
         </div>

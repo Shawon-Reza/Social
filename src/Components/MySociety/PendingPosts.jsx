@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import PostCard from '../Feed/PostCard'
 import Navbar from '../Navbar'
 import { RiMenuAddLine } from 'react-icons/ri'
+import PendingPostCard from './PendingPostCard'
 const mockPosts = [
     {
         id: 1,
@@ -78,7 +79,7 @@ const PendingPosts = () => {
                     {/* Posts Section */}
                     <div className="space-y-4">
                         {posts.map((post) => (
-                            <PostCard
+                            <PendingPostCard
                                 key={post.id}
                                 post={post}
                                 onComment={() => handleOpenCommentModal(post.id)}

@@ -81,7 +81,7 @@ const ShareModal = ({ isOpen, onClose, postData }) => {
     <div className="fixed inset-0 bg-black/15 flex items-center justify-center z-50 transition-opacity duration-300">
       <div
         ref={popupRef}  // Assign ref to the modal container
-        className={`bg-white rounded-xl w-[60%] max-h-[90vh] overflow-hidden transform transition-transform duration-500 ease-out min-w-[420px]
+        className={`bg-white rounded-xl w-[50%] max-h-[90vh] overflow-hidden transform transition-transform duration-500 ease-out min-w-[420px]
           
           ${isOpen ? "translate-y-0" : "translate-y-full"}`}
 
@@ -195,6 +195,13 @@ const ShareModal = ({ isOpen, onClose, postData }) => {
           </button>
         </div>
       </div>
+
+
+      {/* All Friend Popup */}
+      {/* <section>
+
+      </section> */}
+
     </div>
   )
 }
