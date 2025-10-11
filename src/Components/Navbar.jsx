@@ -61,7 +61,7 @@ const Navbar = () => {
   const profileItems = ["profile", "settings", "logout"];
 
   return (
-    <nav className="bg-yellow-500 px-4 py-2 md:py-4 flex items-center justify-between relative lg:px-20">
+    <nav className="bg-yellow-500 px-4 py-2 md:py- flex items-center justify-between relative lg:px-20">
       {/* Logo/Brand */}
       <div
       
