@@ -86,7 +86,7 @@ const SocialFeed = () => {
     }
 
     return (
-        <div className="max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto p-4 min-h-screen">
+        <div className="min-h-screen">
             <StoriesSection stories={mockStories} />
             <CreatePostSection
                 currentUser={{

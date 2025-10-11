@@ -22,7 +22,7 @@ const AddFriendList = () => {
             <div>
                 <Navbar></Navbar>
             </div>
-            <div className="container mx-auto p-4">
+            <div className="2xl:px-44 xl:px-36 lg:px-28 md:px-20 sm:px-14 px-8">
                 <div className="flex justify-between items-center mb-4">
                     <div>
                         <h1 className="text-2xl sm:text-3xl font-bold my-3">Add Friend</h1>

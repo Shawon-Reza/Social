@@ -168,7 +168,7 @@ function Notifications() {
             {/* Main part...................... */}
 
             <div className="min-h-[calc(100vh-100px)] pb-6 px-4 sm:px-6 lg:px-8">
-                <div className="container  mx-auto">
+                <div className="2xl:px-44 xl:px-36 lg:px-28 md:px-20 sm:px-14 px-8">
                     {/* Header */}
                     <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Notifications</h1>
 

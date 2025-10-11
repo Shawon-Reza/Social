@@ -119,14 +119,14 @@ function ProductManagement() {
     return (
         <div>
 
-            <div>
+            <div className="py-7">
                 <Navbar></Navbar>
             </div>
 
 
 
             <div className="min-h-screen bg-gray-50 py-6 px-4 sm:px-6 lg:px-8">
-                <div className="container mx-auto mt-10">
+                <div className="2xl:px-44 xl:px-36 lg:px-28 md:px-20 sm:px-14 px-8 mt-10">
                     {/* Search and Actions Bar */}
                     <div className="mb-6 flex flex-col sm:flex-row gap-3">
                         <div className="flex-1 relative">

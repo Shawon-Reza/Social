@@ -12,7 +12,7 @@ const Feed = () => {
             <div className='py-7'>
                 <Navbar></Navbar>
             </div>
-            <div className=''>
+            <div className='2xl:px-44 xl:px-36 lg:px-28 md:px-20 sm:px-14 px-8'>
                 <SocialFeed></SocialFeed>
             </div>
             <div className='fixed bottom-5 right-5'>

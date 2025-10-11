@@ -152,7 +152,7 @@ function ChatApp() {
     const filteredChats = filter === "unread" ? chats.filter((chat) => chat.unread) : chats
 
     return (
-        <div className="min-h-screen  bg-gray-100">
+        <div className="min-h-screen  bg-gray-100 ">
             <div className="py-7">
                 <Navbar></Navbar>
             </div>

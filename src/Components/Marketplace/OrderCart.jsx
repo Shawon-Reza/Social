@@ -127,7 +127,7 @@ function OrderCart() {
             <Navbar></Navbar>
 
             <div className="min-h-screen bg-gray-100 py-6 px-4 sm:px-6 lg:px-8">
-                <div className="container mx-auto space-y-6">
+                <div className="2xl:px-44 xl:px-36 lg:px-28 md:px-20 sm:px-14 px-8 space-y-6">
                     {/* Order List Section */}
                     <div>
                         <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Order List</h2>

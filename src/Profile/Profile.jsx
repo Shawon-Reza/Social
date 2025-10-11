@@ -161,7 +161,7 @@ const Profile = () => {
             </nav>
 
             {/* Profile Body */}
-            <div className="max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto mt-5">
+            <div className="2xl:px-44 xl:px-36 lg:px-28 md:px-20 sm:px-14 px-8 mt-5">
                 <section className="pb-5 rounded-lg transform transition-transform duration-700 ease-out hover:scale-101">
                     <ProfileHeader data={mockProfile} />
                 </section>

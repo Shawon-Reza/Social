@@ -48,11 +48,11 @@ const MyProductList = () => {
 
     return (
         <div className='bg-[#F3F4F6] min-h-screen'>
-            <div>
+            <div className='py-7'>
                 <Navbar></Navbar>
             </div>
 
-            <div className='container mx-auto'>
+            <div className='2xl:px-44 xl:px-36 lg:px-28 md:px-20 sm:px-14 px-8'>
                 {/* Search and Actions Bar */}
                 <div className="my-10 flex flex-col sm:flex-row gap-3 w-f">
                     <div className="flex-1 relative">

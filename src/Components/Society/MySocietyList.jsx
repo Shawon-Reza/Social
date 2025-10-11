@@ -23,7 +23,7 @@ const MySocietyList = () => {
         <Navbar />
       </section>
 
-      <section className='container mx-auto'>
+      <section className='2xl:px-44 xl:px-36 lg:px-28 md:px-20 sm:px-14 px-8'>
         {/* Header */}
         <div className="flex justify-between items-center mb-4">
           <h1 className="text-2xl sm:text-3xl font-bold">Society</h1>

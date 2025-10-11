@@ -101,7 +101,7 @@ const FriendCardGrid = () => {
                 <Navbar></Navbar>
             </div>
 
-            <section className="container mx-auto px-4">
+            <section className=" 2xl:px-44 xl:px-36 lg:px-28 md:px-20 sm:px-14 px-8">
                 {/* Friend Requests Section */}
                 <div className="flex justify-between items-center mb-4">
                     <div>

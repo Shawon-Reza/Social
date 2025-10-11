@@ -76,12 +76,12 @@ const MarketPlace = () => {
     ];
 
     return (
-        <div className='bg-gray-100'>
+        <div className='bg-gray-100 min-h-screen'>
 
             <section className='py-7'>
                 <Navbar />
             </section>
-            <div className='xl:px-28 lg:px-20 md:px-16 sm:px-10 px-6'>
+            <div className='2xl:px-44 xl:px-36 lg:px-28 md:px-20 sm:px-14 px-8'>
                 <section>
                     <SearchBar></SearchBar>
                 </section>
