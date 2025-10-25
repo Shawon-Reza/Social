@@ -28,10 +28,13 @@ const CreatePostSection = ({ currentUser, onCreatePost }) => {
               value={postText}
               onChange={(e) => setPostText(e.target.value)}
               placeholder="Write your story today..."
-              className="w-full p-3 border border-gray-200 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full p-3 border border-gray-200 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent
+               placeholder-gray-500 dark:placeholder-gray-400
+               text-gray-900 dark:text-gray-100"
               rows="3"
             />
           </div>
+
         </div>
         <div className="flex justify-between items-center mt-3">
           <div className="flex space-x-4">

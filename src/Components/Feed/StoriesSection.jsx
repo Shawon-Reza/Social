@@ -41,7 +41,7 @@ const StoriesSection = ({ stories, onStoryClick }) => {
 
                 <div
                   onClick={() => handleStoryClick(story)}
-                  className={`w-32 h-38 rounded-xl p-0.5 ${story.hasStory ? "bg-gradient-to-r from-pink-500 to-orange-500" : "bg-gray-300"}`}
+                  className={`w-32 h-38 rounded-xl p-0.5 ${story.hasStory ? "bg-red-500 to-orange-500" : "bg-gray-300"}`}
                 >
                   <img
                     src={story.avatar || "/placeholder.svg"}
